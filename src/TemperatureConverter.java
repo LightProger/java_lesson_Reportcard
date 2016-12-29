@@ -8,24 +8,24 @@ import java.io.InputStreamReader;
 public class TemperatureConverter{
 
     public static void main(String[] args) throws IOException {
-        int a, b, g;
+        double a, b, g;
         System.out.println("Конвертер температур.");
         System.out.println("Если вы хотите узнать температуру в Фаренгейтах, нажмите кнопку 1, если в Цельсиях нажмите кнопку 2.");
         BufferedReader reader = new BufferedReader (new InputStreamReader(System.in));
         String d = reader.readLine();
-        a = Integer.parseInt(d);
+        a = Float.parseFloat(d);
 
             if (a == 1) {
                 System.out.println("Введите количество градусов в Цельсиях: ");
                 String s = reader.readLine();
-                b = Integer.parseInt(s);
-                b = b * 50;
+                b = Float.parseFloat(s);
+                b = b * 1.8 + 32;
                 System.out.println("Температура в Фаренгейтах равна: " + b + "F");
             } else if (a == 2) {
                 System.out.println("Введите количество градусов в Фаренгейтах: ");
                   String s = reader.readLine();
-                  g = Integer.parseInt(s);
-                  g = g / 50;
+                  g = Float.parseFloat(s);
+                  g = (g - 32) * 5 / 9;
                 System.out.println("Температура в Цельсиях равна: " + g + "C");
             } else if(a >= 2 || a <= 0){
                 System.out.println("Ошибка! Нажмите кнопку 1 или 2");
